@@ -24,12 +24,13 @@
 			
 		});
 		
-		$("#btn2").click(function(){
-			$.getJSON("https://restcountries.eu/rest/v1/all" {
+		$("#btn2").click(
+			function(){
+			$.getJSON("https://restcountries.eu/rest/v1/all", function (data){
 				
-				for(var i=0;i<jj.length;i++)
+				for(var i=0;i<data.length;i++)
 				{
-					var obj = jj[i];
+					var obj = data[i];
 					$( ".countries" ).append("<div>Name:" + obj.name + ",Captiral:" + obj.capital + "</div>");
 				}
 			});

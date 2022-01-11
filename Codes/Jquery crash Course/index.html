@@ -144,8 +144,8 @@
 
         // ****************************************
 
-        // $('#wiki').hide();
-        //$('#wiki').show();
+        // $('#wiki').hide();    //  changes the css display property to none
+        //$('#wiki').show();     //  changes the css  display property to block
 
         // $('#wiki').hide(1000, function () {     // take 1 second to hide selected element and run this function when action is completed ( i.e after 1 second)
         //     console.log("hidden");
@@ -206,6 +206,7 @@
         // html() -> when we want to get or change html of any tag
         // text() -> when we want to get or change text of any tag
         // val() -> when we wnat to get or change form fields value
+        // attr()   - function give the values of specific attribute
         // remove() - Removes/delete the selected element(and its child elements)
         // empty() - Removes the child elements from the selected element
 
@@ -217,14 +218,20 @@
         // before() - Inserts content before the selected elements
 
         // text() vs html() = https://www.w3schools.com/jquERy/tryit.asp?filename=tryjquery_dom_html_get
-
+        
+        // text() vs val()
+        // For textual elements we use text()
+        // For Input Controls, We use val()
+        
         //  **************
 
-        // $('#ta').val('setting it to harry');
+        // $('#ta').val('setting it to harry');   // getting value of text area 
         // $('#ta').html('setting it to harry');
         // $('#ta').html('setting it to harry3');
         // $('#inp').html('setting it to harry3');
         // $('#inp').val('setting it to harry3');
+        // $('#inp').attr('id');
+        // $('#inp').attr('type');
         // $('#inp').empty()                          // will not work
         // $('#wiki').empty()
         // $('#wiki').text('you are good')
@@ -257,6 +264,7 @@
         // $('#wiki').css('background-color', 'red')                                  // set the css property for ALL matched elements
         // $("#wiki").css({ "background-color": "yellow", "font-size": "200%" });    // set multiple css property for ALL matched elements
         // $('#wiki').css('background-color')                                        //  return the property value of the FIRST matched element
+        // $('#pic').css('width')                                       //  return the property value of the FIRST matched element
 
         // ****************************************
 

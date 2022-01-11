@@ -39,14 +39,14 @@
 		//Second function will be called when hovering is done.
 		
 		$(".menuitem a.link").hover(function(){
-			//Show submenu div on hover
+			//Show submenu div on mouse_enter
 			//here 'this' means link, find its closest parent which is div and class=menuitem
 			//and then find submenu div in it and show it.
 			$(this).closest("div.menuitem").find("div.submenu").show();
 			return false;
 		},
 		function(){
-			//hide submenu div on hover
+			//hide submenu div on mouse_leave
 			$(this).closest("div.menuitem").find("div.submenu").hide();    
 		});
 		

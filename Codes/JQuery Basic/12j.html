@@ -26,7 +26,7 @@
 		//Check who is clicked, We can check by the 'id' property of caller.
 		if(this.id == "lnkShowTxt")
 		{
-			var el = $('#txtData1');
+			var el = $('#txtData1');  // input element
 			alert('For Input Controls,We use val(): ' + el.val());
 		}
 		else if(this.id == "lnkShowPswd")
@@ -36,18 +36,18 @@
 		}
 		else if(this.id == "lnkShowhead")
 		{
-			var el = $('#head');
+			var el = $('#head');   // get h1
 			alert('For textual elements we use text(): ' + el.text());
 		}
 		else if(this.id == "lnkShowSP")
 		{	
-			var el = $('#sp');
+			var el = $('#sp');  // get span
 			alert('For textual elements we use text(): ' +el.text());
 		
 		}
 		else if(this.id == "lnkShowcmb")
 		{
-			var el = $('#cmb');
+			var el = $('#cmb');  // get combo box 
 			alert('For select,We use val(): ' + el.val());
 			
 		}
@@ -73,6 +73,7 @@
 	<form id="frm" >
 		
 		<div id="container" style="border:solid 1px red">
+
 			<input type="text" id="txtData1" /> 
 			<a href="#" id="lnkShowTxt"  >Show Text Data </a> 
 			<br>
@@ -85,10 +86,12 @@
 			<a href="#" id="lnkShowhead" >Show heading Data </a> 
 			<br>
 			<br>
+
 			<div id="div1" style="border:solid 1px blue"> Div Data <h1>Testing </h1> </div> 
 			<a href="#" id="lnkShowDIV" >Show DIV Data </a>
 			<br>
 			<br>
+			
 			<span id="sp">span data </span> 
 			<a href="#" id="lnkShowSP" >Show span Data </a>
 			<br>
