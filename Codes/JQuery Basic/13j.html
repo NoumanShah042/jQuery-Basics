@@ -55,8 +55,12 @@
                 });//end of link click
 
 
+                // dummyDiv ->   <div class="dummy">  <input type="button" value="Button"><a href="#">X</a>    </div>
+
                 var container = $('#container');
                 container.append(dummyDiv);
+
+
 
             });//End of click function
         }//End of ReadyMain
@@ -76,7 +80,7 @@
 
     <div>
         <select id='cmbControl'>
-            //value is set for all options that is used in jquery code get selected item
+            <!-- value is set for all options that is used in jquery code get selected item  --- $('#cmbControl').val()  -->
             <option id="1" value="Text">TextBox</option>
             <option value="Pswd">Password</option>
             <option value="Btn">Button</option>

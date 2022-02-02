@@ -13,10 +13,11 @@
     <p id='second'>this is my body2</p>
     <p class='odd'>this is my body3</p>
     <p>this is my body4</p>
+
     <button id='but'>Toggle now</button>
+    <br><br>
+
     <div id='wiki'>
-
-
         Code With Harry(1770–3854) was the first person born in British America to be ordained a Catholic priest.
         Originally from the colonial Province of Maryland, he became influential in the establishment of Catholicism in
         Washington, D.C. through his parochial service and founding of several educational institutions. He was the
@@ -28,7 +29,7 @@
         ward of President Andrew Jackson, in the first Catholic ceremony to be held in the White House.
     </div>
     
-    <form>
+    <form id="formToHandle">
         <input id='inp' type="text">
         <textarea id='ta'> this is your value my text area</textarea>
     </form>
@@ -57,6 +58,7 @@
         console.log("We are using jQuery");
         console.log($);
         console.log(jQuery);
+
         // jQuery Syntax looks like this
         // $('selector').action()
 
@@ -98,13 +100,13 @@
         // 2. Id selector - this is an example of id selector
         // $('#second').click();
 
-        // 3. Class selector - this is an example of id selector
+        // 3. Class selector - this is an example of class selector
         // $('.odd').click();
 
         // other selectors
         // $('*').click() // clicks on all the elements
         // $('p.odd').click() // clicks on all the elements
-        // $('p:first').click() // clicks on all the elements
+        // $('p:first').click() // clicks only on first element
 
 
         //  ****************************************
@@ -132,15 +134,21 @@
             },
         });
 
-		 $("#inp").focus(function () {
-                $(this).css("background-color", "pink")
-                $(this).val('Nouman Clicked')
-            });
+        $("#inp").focus(function () {
+            $(this).css("background-color", "pink")
+            $(this).val('Nouman Clicked')
+        });
 
-            $("#inp").blur(function () {
-                $(this).css("background-color", "#ffffff")
-                $(this).val('')
-            });
+        $("#inp").blur(function () {
+            $(this).css("background-color", "#ffffff")
+            $(this).val('')
+        });
+
+        $("#formToHandle").submit( function(e){
+            e.preventDefault();  
+            $(this).css("background-color", "pink")
+             
+        }); 
 
         // ****************************************
 
@@ -169,9 +177,12 @@
         // ****************************************
 
         // Slide methods - speed and callback parameters are optional
+        // to add beatuiful animations  using single line
+
         // $('#wiki').slideUp(1000, function(){
         //     console.log('done');
         // })
+
         // $('#wiki').slideDown(1000)
         // $('#wiki').slideToggle(1000)  //  toggle between  slideUp and slideDown
 
@@ -203,10 +214,10 @@
 
         //  JQuery with html ( dom manipulation ) --------------------------https://www.w3schools.com/jquERy/jquery_dom_add.asp
 
-        // html() -> when we want to get or change html of any tag
+        // html() -> when we want to get or change html of any tag      //  suppose we want to get html inside p tag
         // text() -> when we want to get or change text of any tag
-        // val() -> when we wnat to get or change form fields value
-        // attr()   - function give the values of specific attribute
+        // val()  -> when we wnat to get or change form fields value
+        // attr()  - function give the values of specific attribute
         // remove() - Removes/delete the selected element(and its child elements)
         // empty() - Removes the child elements from the selected element
 
@@ -225,15 +236,17 @@
         
         //  **************
 
-        // $('#ta').val('setting it to harry');   // getting value of text area 
+        // $('#ta').val('setting it to harry');   // setting value of text area 
         // $('#ta').html('setting it to harry');
-        // $('#ta').html('setting it to harry3');
-        // $('#inp').html('setting it to harry3');
-        // $('#inp').val('setting it to harry3');
-        // $('#inp').attr('id');
+        // $('#ta').html('setting it to harry3'); 
+        //$('#inp').val('setting it to harry3');
+        //$('#inp').attr('id' );
+        //$('#inp').attr('value', 'nouman');
         // $('#inp').attr('type');
-        // $('#inp').empty()                          // will not work
+        // $('#inp').attr({value: 'Nouman', type:"button"});    // change multiple attributes
+        // $('#inp').empty()                                      // will not work
         // $('#wiki').empty()
+         // $("#formToHandle").empty()
         // $('#wiki').text('you are good')
         // $('#wiki').remove()
 
@@ -266,15 +279,22 @@
         // $('#wiki').css('background-color')                                        //  return the property value of the FIRST matched element
         // $('#pic').css('width')                                       //  return the property value of the FIRST matched element
 
+            var d = $("<div>");//Create DIV in memory
+            //d.attr("style","background-color:red;width:50px;height:50px;");
+			d.attr("style","background-color:"+c+";width:"+w+"px;height:"+h+"px;");
+
         // ****************************************
 
         // ajax: Art of exchanging data with a server without reloading the page.
 
         // AJAX Using jQuery
-        // $.get('https://code.jquery.com/jquery-3.3.1.js', function (data, status) { alert(data); })
+
+        // $.get ( 'url', function(data, status){})
+        $.get('https://code.jquery.com/jquery-3.3.1.js', function (data, status) { alert(data); })
 
         // $.get('https://code.jquery.com/jquery-3.3.1.js', function (data, status) { alert(status); })
 
+        // $.post ( 'url', data_obj,  function(data, status){} )
         // $.post('https://code.jquery.com/jquery-3.3.1.js',
         //     { name: 'harry', channel: 'code with harry' },        //  data
         //     function (data, status) { alert(status) });
